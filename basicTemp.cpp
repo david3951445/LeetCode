@@ -6,6 +6,7 @@ using namespace std;
 class Solution {
 public:
     int function() {
+        
         return 0;
     }
 };
