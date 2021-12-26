@@ -9,6 +9,14 @@ public:
         
         return 0;
     }
+
+    void print() {
+        vector<int> vec;
+        cout << "vec : ";
+        for (int i : vec)
+            cout << i << " ";
+        cout << "\n\n";
+    }
 };
 
 int main() {
