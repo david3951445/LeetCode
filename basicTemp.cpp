@@ -10,10 +10,11 @@ public:
         return 0;
     }
 
+    // print a vector
     void print() {
         vector<int> vec;
         cout << "vec : ";
-        for (int i : vec)
+        for (const auto i : vec)
             cout << i << " ";
         cout << "\n\n";
     }
