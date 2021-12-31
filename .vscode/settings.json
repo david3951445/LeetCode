@@ -6,6 +6,7 @@
         "xstring": "cpp",
         "functional": "cpp",
         "xtree": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "xiosbase": "cpp"
     }
 }
