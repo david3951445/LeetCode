@@ -7,29 +7,26 @@ using namespace std;
 class Solution {
 public:
     bool isValid(string s) {
-        vector<char> vec;
-        for (const char c : s) {
-            if (vec.empty()) {
-                vec.push_back(c);
-                continue;
-            }
+        stack<char> Stack;
 
-            if (c - vec.back() > 0 && c - vec.back() <= 2) {
-                vec.pop_back();
+        for (const char c : s) {
+            /* ASCII code
+             * "(" : 40
+             * ")" : 41
+             * "[" : 91
+             * "]" : 93
+             * "{" : 123
+             * "}" : 125
+             */
+            if (!Stack.empty() && c - Stack.top() > 0 && c - Stack.top() <= 2) {
+                Stack.pop();
             }
             else {
-                vec.push_back(c);
+                Stack.push(c);
             }
-
-            // print(vec);
         }
 
-        if (vec.empty()) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return Stack.empty();
     }
 
     void print(vector<char> vec) {
