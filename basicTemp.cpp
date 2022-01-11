@@ -11,8 +11,7 @@ public:
     }
 
     // print a vector
-    void print() {
-        vector<int> vec;
+    void print(vector<char> vec) {
         cout << "vec : ";
         for (const auto i : vec)
             cout << i << " ";
