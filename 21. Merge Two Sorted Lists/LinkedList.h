@@ -1,30 +1,39 @@
 /* Singly LinkedList libirary for leetcode problem.
  *
- * - it contains two class :
+ * - Struct
  *      - ListNode
- *      corresponding to ListNode Struct given by leetcode problem
+ *      ListNode Struct given by leetcode problem
  * 
+ * - Class
  *      - LinkedList
  *      extension class for debugging
  *          - LinkedList() : initialize a linkedlist
  *          - print()      : print linkedlist
  * 
- * - example (19. Remove Nth Node From End of List):
+ * - Function
+ *      - printListNode()
+ *      
+ * 
+ * - an example (19. Remove Nth Node From End of List)
  *      // example.cpp
  *      # include "LinkedList.h"
- *      
+ *      ...
  *      class Solution {
  *      public:
  *          ListNode* removeNthFromEnd(ListNode* head, int n) {
- *          
+ *          ...
  *          }
  *      }
  * 
  *      int main () { // debugging
  *          LinkedList list({2, 3, 4}); // init a linkedlist
  *          list.print(); // print it
- *          s.removeNthFromEnd(list.head, n) // put it into leetcode problem
- *          list.print(); // print it to check if the algorithm is correct
+ * 
+ *          ListNode* head = s.removeNthFromEnd(list.head, n) // put it into leetcode problem
+ * 
+ *          LinkedList ANS(head);
+ *          ANS.print(); // print it to check if the algorithm is correct
+ *          printListNode(head); // print it to check if the algorithm is correct
  *      }
  */
 #ifndef LINKEDLIST_H
@@ -32,8 +41,7 @@
 #include <vector>
 using namespace std;
 
-class ListNode {
-public:
+struct ListNode {
     int val;
     ListNode *next;
     ListNode() : val(0), next(nullptr) {}
@@ -60,6 +68,14 @@ LinkedList::LinkedList(vector<int> a) {
 
 void LinkedList::print() { 
     ListNode *node = head;
+    cout << "linkedlist : ";
+    for (; node != nullptr; node = node->next) {
+        cout << node->val << " ";     
+    }
+    cout << endl;
+}
+
+void printListNode(ListNode *node) { // Print linkedlist by a head
     cout << "linkedlist : ";
     for (; node != nullptr; node = node->next) {
         cout << node->val << " ";     
