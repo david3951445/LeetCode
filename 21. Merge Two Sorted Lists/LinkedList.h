@@ -58,6 +58,9 @@ public:
     void print(); // Print linkedlist from head to end
 };
 
+void printListNode(ListNode*);
+
+
 LinkedList::LinkedList(vector<int> a) { 
     head = nullptr;
     for (int i = a.size() - 1; i >= 0; i--) {

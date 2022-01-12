@@ -7,6 +7,9 @@ using namespace std;
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        if (list1 == nullptr) return list2;
+        if (list2 == nullptr) return list1;
+
         ListNode *small;
         ListNode *big, *ans;
         if (list1->val < list2->val) {
@@ -19,27 +22,21 @@ public:
         }
         ans = small;
 
-        int i = 0;
-        while (small->next != nullptr && i < 8) {
-            cout << "small : " << small->val << endl;
-            cout << "big : " << big->val << endl;
-
-            i++;
+        while (small->next != nullptr) {
             if (small->next->val < big->val) {
                 small = small->next;
             }
             else {
                 ListNode *temp = small->next;
-                // merge
+                // merge big to small
                 small->next = big; 
-                // switch
+                // switch small & big
                 small = big;
                 big = temp;
             }
         }
-        
-        // merge remain
-        small->next = big;
+             
+        small->next = big; // merge remain
 
         return ans;
     }
