@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "LinkedList.h"
+#include "../include/LinkedList.h"
+#include "../include/Print.h"
 using namespace std;
 
 class Solution {
@@ -47,5 +48,5 @@ int main() {
     LinkedList list1({1, 2, 4});
     LinkedList list2({1, 3, 4});
 
-    printListNode(sol.mergeTwoLists(list1.head, list2.head));
+    print(sol.mergeTwoLists(list1.head, list2.head));
 }

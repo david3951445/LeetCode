@@ -28,7 +28,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: g++.exe 建置使用中檔案"
+            "preLaunchTask": "C/C++: g++.exe 建置使用中檔案" // NOTE : must be same name with "label" in task.json
         }
     ]
 }

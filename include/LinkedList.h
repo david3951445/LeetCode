@@ -1,5 +1,4 @@
 /* Singly LinkedList libirary for leetcode problem.
- *
  * - Struct
  *      - ListNode
  *      ListNode Struct given by leetcode problem
@@ -59,31 +58,5 @@ public:
 };
 
 void printListNode(ListNode*);
-
-
-LinkedList::LinkedList(vector<int> a) { 
-    head = nullptr;
-    for (int i = a.size() - 1; i >= 0; i--) {
-        ListNode *new_node = new ListNode(a[i], head);
-        head = new_node;
-    }
-}
-
-void LinkedList::print() { 
-    ListNode *node = head;
-    cout << "linkedlist : ";
-    for (; node != nullptr; node = node->next) {
-        cout << node->val << " ";     
-    }
-    cout << endl;
-}
-
-void printListNode(ListNode *node) { // Print linkedlist by a head
-    cout << "linkedlist : ";
-    for (; node != nullptr; node = node->next) {
-        cout << node->val << " ";     
-    }
-    cout << endl;
-}
 
 #endif
