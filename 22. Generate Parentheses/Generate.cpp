@@ -6,6 +6,13 @@ using namespace std;
 class Solution {
 public:
     vector<string> ans;
+
+    /* Basic concept
+     * Consider we have l left parentheses and r right parentheses in our hand. We are going to put they into a container.
+     *      - l = r = n at the begining
+     *      - "(" can be put arbitrarily, hence if there still have "(" in our hand (l > 0), we put it into container.
+     *      - ")" can only be put when there is enough "(" in container, i.e.,  number of ")" more than "(" in our hand (r > l)
+     */
     void backtracking(string st, int l, int r) {
         if (l == 0 && r == 0) {
             ans.push_back(st);

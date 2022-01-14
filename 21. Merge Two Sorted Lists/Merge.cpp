@@ -41,6 +41,41 @@ public:
 
         return ans;
     }
+
+    // method 2
+    ListNode* mergeTwoLists1(ListNode* list1, ListNode* list2) {
+        ListNode *head = new ListNode(), *cur;
+
+        for (cur = head; list1 && list2; cur = cur->next) {
+            if (list1->val < list2->val) {
+                cur->next = list1;
+                list1 = list1->next;
+            }
+            else {
+                cur->next = list2;
+                list2 = list2->next;
+            }
+        }
+
+        cur->next = list1 ? list1 : list2; // merge remain
+        return head->next;
+    }
+
+    // method 3 (recursive)
+    ListNode* mergeTwoLists2(ListNode* list1, ListNode* list2) {
+        if (!(list1 && list2)) {
+            return list1 ? list1 : list2;
+        }
+        
+        if (list1->val < list2->val) {
+            list1->next = mergeTwoLists2(list1->next, list2);
+            return list1;
+        }
+        else {
+            list2->next = mergeTwoLists2(list1, list2->next);
+            return list2;
+        }
+    }
 };
 
 int main() {
@@ -48,5 +83,5 @@ int main() {
     LinkedList list1({1, 2, 4});
     LinkedList list2({1, 3, 4});
 
-    print(sol.mergeTwoLists(list1.head, list2.head));
+    print(sol.mergeTwoLists2(list1.head, list2.head));
 }
