@@ -11,6 +11,7 @@ class Solution {
             return l1->val > l2->val;
         }
     };
+
 public:
     // priority queue
     ListNode* mergeKLists(vector<ListNode*>& lists) {
@@ -46,6 +47,7 @@ public:
         }
         return lists[lists.size() - 1];
     }
+    
 private:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
         if (list1 == nullptr) return list2;
