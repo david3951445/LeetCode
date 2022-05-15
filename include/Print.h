@@ -2,7 +2,7 @@
  * print vector, linkedlist, others (int, char, char[], string, ...)
  * - functions
  *      - print(T)
- *      Print T.
+ *          Print T.
  */
 
 #ifndef PRINT_H
