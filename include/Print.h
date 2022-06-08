@@ -17,6 +17,7 @@ using namespace std;
 template<typename T> void print(T); // General print
 template<typename T, size_t> void print(T*); // Print array
 template<typename T> void print(vector<T>); // Print vector
+template<typename T> void print(vector<vector<T>>); // Print 2d vector
 template<> void print(ListNode*); // Print linkedlist by it's head
 
 template<typename T> void print(T vec) {
@@ -35,6 +36,17 @@ template<typename T> void print(vector<T> vec) {
     cout << "vector : ";
     for (const auto i : vec) {
         cout << i << " ";
+    }
+    cout << endl;
+}
+
+template<typename T> void print(vector<vector<T>> vec) { 
+    cout << "2d vector : " << endl;
+    for (const auto vec1 : vec) {
+        for (const auto i : vec1) {
+            cout << i << " ";
+        }
+        cout << endl;
     }
     cout << endl;
 }
